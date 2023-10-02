@@ -15,9 +15,9 @@ colombia <- readWFS(c(c(6, 10), c(11, 12)))
 ```
 The household ID is at position 6 to 10 and the woman line number in the household file is at position 11 to 12 of the V001 variable.<br>
 
-The ReadWFS automatically creates a Rdat file, in the same directory than the original WFS DAT file, which contains a data.frame with the converted WFS file.<br>
+The ReadWFS function automatically creates a Rdat file, in the same directory than the original WFS DAT file, which contains a data.frame containing the data from the converted WFS file.<br>
 
-<B>colombia</B> is a vector which contains the path to the directory and the name of the R file. If you want to change to this directory, simply enter in RStudio:
+<B>colombia</B> is a vector returned by readWFS() which contains the path to the directory and the name of the R file. If you want to change to this directory, simply enter in RStudio:
 ``` r
 setwd(colombia[1])
 ```
@@ -25,4 +25,9 @@ If you want to load the data.frame in RStudio, enter:
 ``` r
 load(paste(colombia[2], ".Rdat", sep="")) 
 ```
-The function use the 
+The function use the <B>expss</B> package to add labels and value labels as well as to provide the possibility of exporting the dataframe to Excel (implemented) or to SPSS (not implemented at this time).
+In order to export to Excel, simply add a parameter in the main call:
+``` r
+colombia <- readWFS(c(c(6, 10), c(11, 12)), exportToExcel=TRUE))
+```
+The Excel file will be created in the same directory than the DAT file one.
