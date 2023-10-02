@@ -3,7 +3,7 @@
 readWFS <- function(posHousehold=NULL, exportToSPSS=FALSE, exportToExcel=FALSE) {
   #posHousehold contains the household number and the line number of the woman in format c(start, end)
   #for example posHousehold <- c(c(6, 10), c(11, 12))
-  library2 ("expss")
+  library (expss)
 
   ok <- rstudioapi::showQuestion("Choose a WFS dat file",
                                  "(the dct file should be in the same directory)",
