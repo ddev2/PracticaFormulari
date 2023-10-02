@@ -25,3 +25,4 @@ If you want to load the data.frame in RStudio, enter:
 ``` r
 load(paste(colombia[2], ".Rdat", sep="")) 
 ```
+The function use the 
